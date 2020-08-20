@@ -18,9 +18,13 @@ from django.urls import path
 from homepage import views
 
 urlpatterns = [
-    path('', views.index, name="homepage"),
+    path('admin/', admin.site.urls),
+    path('', views.index, name="index"),
     path('boasts/', views.boasts),
     path('roast/', views.roasts),
     path('add-post/', views.add-post),
-    path('admin/', admin.site.urls),
+    path('upvote/<int:id>/', views.upvote),
+    path('downvote/<int:id>/', views.downvote),
+    path('sorted/', views.sorted),
+    path('posts/<str:id>/', views.posts)
 ]
