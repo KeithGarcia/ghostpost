@@ -19,12 +19,11 @@ from homepage import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name="index"),
+    path('', views.index, name="homepage"),
     path('boasts/', views.boasts),
-    path('roast/', views.roasts),
-    path('add-post/', views.add-post),
-    path('upvote/<int:id>/', views.upvote),
-    path('downvote/<int:id>/', views.downvote),
-    path('sorted/', views.sorted),
-    path('posts/<str:id>/', views.posts)
+    path('roasts/', views.roasts),
+    path('addpost/', views.addpost),
+    path('upvote/<int:up_votes_id>/', views.upvotes),
+    path('downvote/<int:down_votes_id>/', views.downvotes),
+    path('sortvotes/', views.sortvotes),
 ]

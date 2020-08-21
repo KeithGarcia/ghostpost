@@ -1,0 +1,19 @@
+<a href="/addpost/">addpost</a>
+<a href="/boasts/">boasts</a>
+<a href="/roasts/">roasts</a>
+<a href="/sortvotes/">sortvotes</a>
+{% for post in posts %}
+{% if post.choices %}
+<h3 style="color:blue">boasts</h3>
+{% else %}
+<hr>
+<h3 style="color:red">roasts</h3>
+{% endif %}
+<p>{{post.post_field}}</p>
+<p>{{post.votes}}</p>
+<a href="/upvote/{{ post.id }}/">&#129093</a>
+<br>
+<a href="/downvote/{{ post.id }}/">&#129095</a>
+<hr>
+<p>{{post.time_posted}}</p>
+{% endfor %}
